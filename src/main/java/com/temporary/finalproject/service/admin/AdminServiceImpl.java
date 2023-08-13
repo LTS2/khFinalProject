@@ -1,20 +1,35 @@
 package com.temporary.finalproject.service.admin;
 
-import com.temporary.finalproject.model.dao.admin.AdminDAO;
+import com.temporary.finalproject.model.entity.admin.AdminEntity;
+import com.temporary.finalproject.model.repository.AdminRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Slf4j
 @Service
 public class AdminServiceImpl implements AdminService{
-	private AdminDAO adminDAO;
+
+	@Autowired
+	private AdminRepository adminRepository;
+
+	@Transactional
+	public List<AdminEntity> getAllUsers(){
+		return adminRepository.findAll();
+	}
 
 
 	// 아래는 예시 메서드 입니다.
-	@Override
 	@Transactional // 트랜잭션 처리
+	public void testMethod(AdminEntity something) {
+		adminRepository.save(something);
+	}
+
+	@Override
 	public void addSomething(String something) {
-		adminDAO.addSomething(something);
+
 	}
 }

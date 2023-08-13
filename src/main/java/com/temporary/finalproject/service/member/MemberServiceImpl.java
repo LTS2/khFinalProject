@@ -1,6 +1,5 @@
 package com.temporary.finalproject.service.member;
 
-import com.temporary.finalproject.model.dao.member.MemberDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,12 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class MemberServiceImpl implements MemberService{
 
-	private MemberDAO memberDAO;
 
 	// 아래는 예시 코드입니다.
 	@Override
 	@Transactional // 트랜잭션 처리하기
 	public void addSomething(String something) {
-		memberDAO.addSomething(something);
+
 	}
 }

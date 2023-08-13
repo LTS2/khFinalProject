@@ -1,8 +1,8 @@
-package com.wj.thymleaftest.controller;
+package com.temporary.finalproject.controller.board;
 
-import com.wj.thymleaftest.entity.Board;
-import com.wj.thymleaftest.model.board.BoardDTO;
-import com.wj.thymleaftest.service.BoardServiceImpl;
+import com.temporary.finalproject.model.entity.board.BoardDTO;
+import com.temporary.finalproject.model.entity.board.BoardEntity;
+import com.temporary.finalproject.service.board.BoardServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +14,7 @@ import java.util.List;
 @Slf4j
 @Controller
 public class BoardController {
+
 	@Autowired
 	BoardServiceImpl boardServiceImpl;
 
@@ -21,7 +22,7 @@ public class BoardController {
 	public String board(Model model){
 		log.info("BoardController.board() execute");
 
-		List<Board> list = boardServiceImpl.findAll();
+		List<BoardEntity> list = boardServiceImpl.findAll();
 		model.addAttribute("board", list);
 		return "board/board";
 	}
@@ -49,7 +50,7 @@ public class BoardController {
 
 	@GetMapping("/board_view/{id}")
 		public String viewBoard(@PathVariable("id") Long boardId, Model model){
-			Board board = boardServiceImpl.findOne(boardId);
+			BoardEntity board = boardServiceImpl.findOne(boardId);
 			log.info(board.toString());
 			model.addAttribute("board", board);
 

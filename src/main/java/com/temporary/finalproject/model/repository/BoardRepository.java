@@ -1,7 +1,7 @@
-package com.wj.thymleaftest.repository;
+package com.temporary.finalproject.model.repository;
 
-import com.wj.thymleaftest.entity.Board;
+import com.temporary.finalproject.model.entity.board.BoardEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BoardRepository extends JpaRepository<Board, Long> {
+public interface BoardRepository extends JpaRepository<BoardEntity, Long> {
 }

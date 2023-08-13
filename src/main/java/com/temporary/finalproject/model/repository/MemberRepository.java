@@ -1,4 +1,4 @@
-package com.temporary.finalproject.repository;
+package com.temporary.finalproject.model.repository;
 
 import com.temporary.finalproject.model.entity.member.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

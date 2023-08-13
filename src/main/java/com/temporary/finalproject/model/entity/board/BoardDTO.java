@@ -1,7 +1,6 @@
-package com.wj.thymleaftest.model.board;
+package com.temporary.finalproject.model.entity.board;
 
 
-import com.wj.thymleaftest.entity.Board;
 import lombok.*;
 
 import java.util.Date;
@@ -20,8 +19,8 @@ public class BoardDTO {
 	private String writer;
 	private Date writtenDate;
 
-	public Board toEntity(){
-		return new Board(id, title, content,status, writer, writtenDate);
+	public BoardEntity toEntity(){
+		return new BoardEntity(id, title, content,status, writer, writtenDate);
 	}
 	@Override
 	public String toString() {

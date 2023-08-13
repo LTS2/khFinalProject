@@ -1,9 +1,9 @@
-package com.wj.thymleaftest.service;
+package com.temporary.finalproject.service.board;
 
 
-import com.wj.thymleaftest.entity.Board;
-import com.wj.thymleaftest.model.board.BoardDTO;
-import com.wj.thymleaftest.repository.BoardRepository;
+import com.temporary.finalproject.model.entity.board.BoardDTO;
+import com.temporary.finalproject.model.entity.board.BoardEntity;
+import com.temporary.finalproject.model.repository.BoardRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,11 +18,11 @@ public class BoardServiceImpl implements BoardService {
 
 	// BoardRepository 인터페이스 객체의 Bean 을 자동으로 주입
 	@Autowired
-	private BoardRepository boardRepository;
+	private BoardRepository boardRepository ;
 
 	@Override
 	// Board 전체 목록 실행
-	public List<Board> findAll() {
+	public List<BoardEntity> findAll() {
 		log.info("BoardService 의 index() 실행");
 
 		return boardRepository.findAll();
@@ -30,17 +30,21 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	// 1건 조회
-	public Board findOne(Long id) {
+	public BoardEntity findOne(Long id) {
 		log.info("BoardService 의 show() 실행");
 
 		return boardRepository.findById(id).orElse(null);
 	}
 
+
+
+
+
 	@Override
 	// 생성
-	public Board save(BoardDTO dto) {
+	public BoardEntity save(BoardDTO dto) {
 		log.info("BoardService 의 save() 실행");
-		Board board = dto.toEntity();
+		BoardEntity board = dto.toEntity();
 
 		// id는 DB가 자동으로 생성하므로 id가 넘어오는 데이터를 저장 하지 않는다.
 		if (board.getId() != null) {
@@ -64,10 +68,10 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	// 수정
-	public Board update(Long id, BoardDTO dto) {
+	public BoardEntity update(Long id, BoardDTO dto) {
 		log.info("BoardService 의 update() 실행");
-		Board board = dto.toEntity();
-		Board target = boardRepository.findById(id).orElse(null);
+		BoardEntity board = dto.toEntity();
+		BoardEntity target = boardRepository.findById(id).orElse(null);
 
 		// 수정할 대상이 없거나 id 가 다른 경우 잘못된 요청이다 (400 에러 띄움)
 		if (target != null || id != board.getId()) {
@@ -83,9 +87,9 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	// 삭제
-	public Board delete(Long id) {
+	public BoardEntity delete(Long id) {
 		log.info("BoardService 의 delete() 실행");
-		Board target = boardRepository.findById(id).orElse(null);
+		BoardEntity target = boardRepository.findById(id).orElse(null);
 
 		// 수정할 대상이 없거나 id 가 다른 경우 잘못된 요청이다 (400 에러 띄움)
 		if (target != null) {

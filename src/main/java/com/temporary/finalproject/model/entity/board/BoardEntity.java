@@ -1,4 +1,4 @@
-package com.wj.thymleaftest.entity;
+package com.temporary.finalproject.model.entity.board;
 
 
 import jakarta.persistence.*;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Setter
 @Getter
 @ToString
-public class Board {
+public class BoardEntity {
 
 	@Id
 //	@GeneratedValue 아래의 괄호 문은 생략해도 됨.
@@ -38,21 +38,21 @@ public class Board {
 
 
 
-	public void patch(Board board){
-		if(board.title != null){
-			this.title = board.title;
+	public void patch(BoardEntity boardEntity){
+		if(boardEntity.title != null){
+			this.title = boardEntity.title;
 		}
-		if(board.status != null){
-			this.status = board.status;
+		if(boardEntity.status != null){
+			this.status = boardEntity.status;
 		}
-		if (board.writer != null) {
-			this.writer = board.writer;
+		if (boardEntity.writer != null) {
+			this.writer = boardEntity.writer;
 		}
-		if (board.writtenDate != null) {
-			this.writtenDate = board.writtenDate;
+		if (boardEntity.writtenDate != null) {
+			this.writtenDate = boardEntity.writtenDate;
 		}
-		if (board.content != null) {
-			this.content = board.content;
+		if (boardEntity.content != null) {
+			this.content = boardEntity.content;
 		}
 
 	}
