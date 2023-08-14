@@ -11,6 +11,7 @@ public class AdminDAOImpl{
 
 //	@Autowired
 //	AdminRepository adminRepository;
-	// 테스트 
+	// 테스트
+	// wj 브랜치에서 수정하기.
 
 }
