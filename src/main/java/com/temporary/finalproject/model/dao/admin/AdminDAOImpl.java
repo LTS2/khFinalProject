@@ -14,4 +14,5 @@ public class AdminDAOImpl{
 	// 테스트
 	// wj 브랜치에서 수정하기.
 
+	// 수정 후 라스트로 다시 올리기
 }
