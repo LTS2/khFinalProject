@@ -14,4 +14,6 @@ public class AdminDAOImpl{
 	// 테스트
 
 	// 우진에서 수정
+
+	// 이건 추가된 우진내용
 }
